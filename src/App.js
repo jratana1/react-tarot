@@ -2,7 +2,7 @@ import CardContainer from './containers/cardContainer'
 import ReadingContainer from './containers/readingContainer'
 
 import React, { useState, useEffect } from 'react'
-import { HashRouter, BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter, BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
   const [cards, setCards] = useState([])
@@ -43,25 +43,28 @@ function App() {
       } else {
         return (
           <>
-          <HashRouter basename='/'>
+            <li><Link to="/">Home</Link></li> 
+            <li><Link to="/cards">Cards</Link></li>
+            <li><Link to="/readings">Readings</Link></li>
             <Route exact path="/cards" >
               {cards.map((card) => <CardContainer props={card}/>)}
             </Route>
             <Route exact path="/readings" >
               {shuffle(cards).map((card) => <ReadingContainer props={card}/>)}
             </Route>
-          </HashRouter>
           </>
         )
       }
     }
   
   return (
-    <Router>
+    // <Router>
+    <HashRouter basename='/'>
       <div className="App">
             {renderLoad()}      
       </div>
-    </Router>
+    </HashRouter>
+    // </Router>
   );
 }
 
