@@ -1,8 +1,27 @@
 import CardContainer from './containers/cardContainer'
-import ReadingContainer from './containers/readingContainer'
-
+import ReadingsContainer from './containers/readingsContainer'
 import React, { useState, useEffect } from 'react'
-import { HashRouter, BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter, Route, Link } from 'react-router-dom';
+
+export function shuffle(array) {
+
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 function App() {
   const [cards, setCards] = useState([])
@@ -18,25 +37,6 @@ function App() {
       },
     [])
 
-    function shuffle(array) {
-      var currentIndex = array.length, temporaryValue, randomIndex;
-    
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-    
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-    
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-    
-      return array;
-    }
-
     const renderLoad = () => {
       if (isBusy) {
         return <div>Loading</div>;
@@ -45,12 +45,14 @@ function App() {
           <>
             <li><Link to="/">Home</Link></li> 
             <li><Link to="/cards">Cards</Link></li>
-            <li><Link to="/readings">Readings</Link></li>
+            <li><Link to="/readings" >Readings</Link></li>
             <Route exact path="/cards" >
-              {cards.map((card) => <CardContainer props={card}/>)}
+              <div className="Card-Index">
+                {cards.map((card) => <CardContainer props={card}/>)}
+              </div>
             </Route>
             <Route exact path="/readings" >
-              {shuffle(cards).map((card) => <ReadingContainer props={card}/>)}
+                <ReadingsContainer cards={cards}/>
             </Route>
           </>
         )
@@ -58,13 +60,11 @@ function App() {
     }
   
   return (
-    // <Router>
     <HashRouter basename='/'>
       <div className="App">
             {renderLoad()}      
       </div>
     </HashRouter>
-    // </Router>
   );
 }
 

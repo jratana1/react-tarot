@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
-import deckReducer from './deckReducer'
+import readingsReducer from './readingsReducer'
 
 const rootReducer = combineReducers({
-//   authors: authorsReducer,
-//   books: booksReducer
+  readings: readingsReducer,
 });
 
 export default rootReducer
