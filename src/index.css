@@ -14,21 +14,33 @@ body {
     sans-serif;
   position: fixed;
   overflow: hidden;
+  background: #3398db;
 }
 
 .App {
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding: 10px;
   height: 100vh;
   width: 100vw;
   overflow: auto;
   font-size: 12px;
   font-weight: 600;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #3398db;
+}
+
+.Reading-Container {
+  width: 30vh;
+  height: 50vh;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 
 .Card-Container {
@@ -37,9 +49,7 @@ body {
   will-change: transform;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: absolute;
-  
+  justify-content: center; 
 }
 
 .Card-Front, .Card-Back {
@@ -53,14 +63,13 @@ body {
   max-height: 570px;
   will-change: transform;
   border-radius: 10px;
-  /* box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3); */
   box-shadow: 0px 8px 10px 0px rgba(50, 50, 73, 0.4);
   display: flex;
   flex-direction: column;
   padding: 1%;
   position: absolute;
   will-change: transform, opacity;
-
+  font-size: 1.5vh;
 }
 
 .Card-Name {
@@ -68,7 +77,7 @@ body {
 }
 
 .Rocket {
-  background: url(./r.png) no-repeat;
+  background: url(./assets/r.png) no-repeat;
   background-size: auto 85%;
   width: 140px;
   height: 140px;

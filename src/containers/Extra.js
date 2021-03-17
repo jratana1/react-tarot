@@ -142,23 +142,23 @@ import { scale, dist } from 'vec-la'
 //     )
 //   }
 
-export default function Deck() {
-    const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0] }))
+// export default function Deck() {
+//     const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0] }))
   
-    const bind = useDrag(
-      ({ down, movement: banana }) => {
-        setPos({ pos: banana, immediate: down })
-      },
-      { initial: () => pos.getValue() }
-    )
-    return (
-      <animated.div
-      className="Rocket"
-        {...bind()}
-        style={{ transform: interpolate([pos], ([x, y]) => `translate3d(${x}px,${y}px,0)`) }}
-      />
-    )
-  }
+//     const bind = useDrag(
+//       ({ down, movement: banana }) => {
+//         setPos({ pos: banana, immediate: down })
+//       },
+//       { initial: () => pos.getValue() }
+//     )
+//     return (
+//       <animated.div
+//       className="Rocket"
+//         {...bind()}
+//         style={{ transform: interpolate([pos], ([x, y]) => `translate3d(${x}px,${y}px,0)`) }}
+//       />
+//     )
+//   }
 
 // export default function Deck() {
 //     const [{ xy }, set] = useSpring(() => ({ xy: [0, 0] }))

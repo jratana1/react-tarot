@@ -1,5 +1,8 @@
-import CardContainer from './components/cardContainer'
+import CardContainer from './containers/cardContainer'
+import ReadingContainer from './containers/readingContainer'
+
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
   const [cards, setCards] = useState([])
@@ -15,20 +18,48 @@ function App() {
       },
     [])
 
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+    
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+    
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+    
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+    
+      return array;
+    }
+
     const renderLoad = () => {
       if (isBusy) {
         return <div>Loading</div>;
       } else {
         return (
-          cards.map((card) => <CardContainer props={card}/>)
+          <>
+          <Route exact path="/cards" >
+            {cards.map((card) => <CardContainer props={card}/>)}
+          </Route>
+          <Route exact path="/readings" >
+            {shuffle(cards).map((card) => <ReadingContainer props={card}/>)}
+          </Route>
+          </>
         )
       }
     }
   
   return (
-    <div className="App">
-           {renderLoad()}      
-    </div>
+    <Router>
+      <div className="App">
+            {renderLoad()}      
+      </div>
+    </Router>
   );
 }
 
