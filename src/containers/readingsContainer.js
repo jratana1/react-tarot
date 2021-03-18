@@ -29,9 +29,9 @@ export default function ReadingsContainer(props)  {
         shuffledCards = shuffle(props.cards).map((card) => <ReadingCardContainer key= {card.id} props={card}/>)
     }
     
-    return <>
-    {/* {shuffledCards} */}
+    return <div className="Reading-Container">
+    {shuffledCards}
     <Reading/>
-    </>
+          </div>
  
 }

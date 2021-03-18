@@ -19,12 +19,13 @@ class Reading extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addReading(this.state)
+    this.setState({question: ""})
   }
 
   render() {
     return(
         <form onSubmit={ event => this.handleSubmit(event) }>
-          <p>
+          <p className="Form-Input">
             <label>Ask A Question</label>
             <textarea
           type="text"
