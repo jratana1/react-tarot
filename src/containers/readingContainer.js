@@ -28,12 +28,16 @@ export default function CardReadingContainer(props)  {
       // props.updateZCounter()
       dispatch(addCount())
       event.target.parentElement.style.zIndex= count.count
-      
+      }
+
+      const onMouseDown = (event) => {
+        dispatch(addCount())
+        event.target.parentElement.style.zIndex= count.count
       }
       
     
 
-    return  <a.div className="Card-Reading-Container" onClick={(event) => onCardClick(event)}
+    return  <a.div className="Card-Reading-Container" onClick={(event) => onCardClick(event)} onMouseDown={(event) => onMouseDown(event)}
                 {...bind()}
                 style={{ transform: interpolate([pos], ([x, y]) => `translate3d(${x}px,${y}px,0)`) }}>
                     <Card props={props.props} flipped= {flipped} reading={true}/>
