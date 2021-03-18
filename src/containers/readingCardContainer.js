@@ -5,12 +5,12 @@ import Card from '../components/card'
 import { useDispatch, useSelector } from "react-redux";
 import { addCount } from "../actions/counterAction";
 
-export default function CardReadingContainer(props)  {
+export default function ReadingCardContainer(props)  {
   const count = useSelector(state => state.count);
   const dispatch = useDispatch();
   const [flipped, setFlipped] = useState(false)
-    const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0] }))
-    const [ tap, setTap] = useState(false)
+  const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0] }))
+  const [ tap, setTap] = useState(false)
 
     const bind = useDrag(
         ({ down, movement: xy, tap }) => {
@@ -37,6 +37,6 @@ export default function CardReadingContainer(props)  {
     return  <a.div className="Card-Reading-Container" onClick={(event) => onCardClick(event)} onMouseDown={(event) => onMouseDown(event)}
                 {...bind()}
                 style={{ transform: interpolate([pos], ([x, y]) => `translate3d(${x}px,${y}px,0)`) }}>
-                    <Card props={props.props} flipped= {flipped} reading={true}/>
+                    <Card props={props.props.attributes} flipped= {flipped} reading={true}/>
              </a.div>
 }

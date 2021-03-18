@@ -13,7 +13,7 @@ function App() {
       fetch('http://localhost:3000/api/v1/cards')
         .then(resp => resp.json())
         .then(data =>{ 
-              setCards(data)
+              setCards(data.data)
               setBusy(false);})
       },
     [])
