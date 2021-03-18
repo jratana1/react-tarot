@@ -1,7 +1,5 @@
-const INCREMENT = {
-    INCREMENT: 'INCREMENT',
+export const increment = () => {
+    return {
+        type: 'INCREMENT',
     }
-    
-    export default {
-    ...INCREMENT,
-    }
+}

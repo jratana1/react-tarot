@@ -1,11 +1,11 @@
 const initialState = {
-    counter: 44
+    counter: 0
 }
 
 const readingsReducer = (state= initialState, action) => {
     switch(action.type){
         case "INCREMENT": 
-        return {counter: state.counter += 1}
+        return {...state, counter: state.counter += 1}
     
         default:
             return {...state}
@@ -13,3 +13,4 @@ const readingsReducer = (state= initialState, action) => {
 }
 
 export default readingsReducer
+
