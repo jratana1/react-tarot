@@ -11,7 +11,6 @@ export default function CardReadingContainer(props)  {
   const [flipped, setFlipped] = useState(false)
     const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0] }))
     const [ tap, setTap] = useState(false)
-    // const [ clickCounter, setCounter] = useState(0)
 
     const bind = useDrag(
         ({ down, movement: xy, tap }) => {
@@ -24,8 +23,6 @@ export default function CardReadingContainer(props)  {
 
     const onCardClick = (event) => { 
       if (tap) setFlipped(state => !state)
-      // setCounter(clickCounter+1) 
-      // props.updateZCounter()
       dispatch(addCount())
       event.target.parentElement.style.zIndex= count.count
       }

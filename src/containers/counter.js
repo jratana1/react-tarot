@@ -1,23 +1,4 @@
-// import React from "react";
-// import { connect } from "react-redux";
-// import { addCount } from "../actions/counterAction";
 
-// export const Count = ({ counter, addCount }) => {
-//   return (
-//     <main>
-//       <div>Count: {counter}</div>
-//       <button onClick={addCount}>Add to count</button>
-//     </main>
-//   );
-// };
-
-// const mapStateToProps = state => ({
-//   counter: state.counter
-// });
-
-// const mapDispatchToProps = { addCount };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Count);
 
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
