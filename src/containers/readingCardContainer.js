@@ -44,17 +44,22 @@ export default function ReadingCardContainer(props)  {
       }
 
       useEffect(() => {
-         if (flag && (scope[0].cards[0] === self)) {
+        if(flag){
+          setPos({pos: [0, 0]})
+          setFlipped(false)
+        }
+
+        if (flag && (scope.slice(-1)[0].cards[0] === self)) {
         setPos({pos: [300,-100]})
         dispatch(setFlagFalse())
       }
 
-        if (flag && (scope[0].cards[1] === self))  {
+        if (flag && (scope.slice(-1)[0].cards[1] === self))  {
         setPos({pos: [600,-100]})
         dispatch(setFlagFalse())
       }
 
-       if (flag && (scope[0].cards[2] === self))  {
+       if (flag && (scope.slice(-1)[0].cards[2] === self))  {
         setPos({pos: [900,-100]})
         dispatch(setFlagFalse())
       }
