@@ -22,7 +22,7 @@ export default function Card(props) {
     
     const frontText = () => {
         if (props.reading && isShown) {
-        return <div className="Card-Reading-Text" style={{backgroundColor: `rgba(63, 105, 86, 0.863)`}}>
+        return <div className="Card-Reading-Text" style={{backgroundColor: `rgba(63, 105, 86, 0.7)`, fontWeight: "bold" }}>
         <h2 className="Card-Name">{props.props.name}</h2>
         <p className="Card-Upright">Upright: {props.props.upright}</p>
         <p className="Card-Reverse">Reversed: {props.props.reversed}</p>
@@ -53,9 +53,6 @@ export default function Card(props) {
         }} 
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}>
-        {/* {isShown && props.reading && (
-            frontText()
-        )} */}
         {frontText()}
     </a.div>  
     </>
