@@ -1,5 +1,5 @@
 export const addCount = () => {
     return {
-        type: 'INCREMENT'
+        type: 'BUTTON_INCREMENT'
     }
 }

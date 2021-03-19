@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReadingCardContainer from './readingCardContainer'
+import ReadingCardContainer, { deal } from './readingCardContainer'
 import Reading from '../components/reading'
 
 export function shuffle(array) {
@@ -26,12 +26,13 @@ export default function ReadingsContainer(props)  {
     let shuffledCards = <></>
 
         if ( props.cards ) { 
-        shuffledCards = shuffle(props.cards).map((card) => <ReadingCardContainer key= {card.id} props={card}/>)
+        shuffledCards = shuffle(props.cards).map((card) => <ReadingCardContainer key= {card.id} props={card} />)
     }
     
     return <div className="Reading-Container">
     {shuffledCards}
-    <Reading/>
+    <Reading cards={props.cards}/>
           </div>
  
 }
+

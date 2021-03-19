@@ -28,6 +28,7 @@ function App() {
             <li><Link to="/cards">Cards</Link></li>
             <li><Link to="/readings" >Readings</Link></li>
             <Route exact path="/" >
+                {/* <Login/> */}
                 <Count/>
             </Route>
             <Route exact path="/cards" >

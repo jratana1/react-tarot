@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deal } from '../containers/readingCardContainer'
+
+function getRandom(arr, n) {
+  var result = new Array(n),
+      len = arr.length,
+      taken = new Array(len);
+  if (n > len)
+      throw new RangeError("getRandom: more elements taken than available");
+  while (n--) {
+      var x = Math.floor(Math.random() * len);
+      result[n] = arr[x in taken ? taken[x] : x];
+      taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+}
 
 class Reading extends Component {
 
   constructor() {
     super();
     this.state = {
-      question: '',
+      question: ''
     };
   }
 
@@ -18,8 +33,25 @@ class Reading extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    let cardIds= getRandom(this.props.cards,3).map(card => card.id)
+    this.state.cards= cardIds
+    this.state.flag= true
     this.props.addReading(this.state)
-    this.setState({question: ""})
+
+    let config = {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify(this.state)
+  }
+
+  fetch(`http://localhost:3000/api/v1/readings`, config)
+      .then(res => res.json())
+      .then(res => {
+          this.setState({question: ""})
+      })
   }
 
   render() {
