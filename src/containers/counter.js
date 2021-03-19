@@ -1,47 +1,45 @@
+// import React from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addCount } from "../actions/counterAction";
 
+// export default function Count() {
+//   const count = useSelector(state => state.count);
+//   const dispatch = useDispatch();
 
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addCount } from "../actions/counterAction";
+//   return (
+//     <main>
+//       <div>Count: {count.count}</div>
+//       <button onClick={() => dispatch(addCount())}>Add to count</button>
+//     </main>
+//   );
+// };
 
-export default function Count() {
-  const count = useSelector(state => state.count);
-  const dispatch = useDispatch();
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-  return (
-    <main>
-      <div>Count: {count.count}</div>
-      <button onClick={() => dispatch(addCount())}>Add to count</button>
-    </main>
-  );
+class Count extends Component {
+
+  handleOnClick() {
+    
+    this.props.dispatch({
+      type: 'INCREMENT',
+    });
+  }
+  
+  render() {
+    return (
+      <div>
+        <button onClick={(event) => this.handleOnClick()}>
+          Click
+        </button>
+        <p>{this.props.count.count}</p>
+      </div>
+    );
+  }
 };
 
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+const mapStateToProps = (state) => {
+  return { count: state.count };
+};
 
-// class Count extends Component {
-
-//   handleOnClick() {
-    
-//     this.props.dispatch({
-//       type: 'INCREMENT',
-//     });
-//   }
-  
-//   render() {
-//     return (
-//       <div>
-//         <button onClick={(event) => this.handleOnClick()}>
-//           Click
-//         </button>
-//         <p>{this.props.count.count}</p>
-//       </div>
-//     );
-//   }
-// };
-
-// const mapStateToProps = (state) => {
-//   return { count: state.count };
-// };
-
-// export default connect(mapStateToProps)(Count);
+export default connect(mapStateToProps)(Count);
