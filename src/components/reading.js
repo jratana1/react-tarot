@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deal } from '../containers/readingCardContainer'
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -50,6 +49,7 @@ class Reading extends Component {
   fetch(`http://localhost:3000/api/v1/readings`, config)
       .then(res => res.json())
       .then(res => {
+          debugger
           this.setState({question: ""})
       })
   }

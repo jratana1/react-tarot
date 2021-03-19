@@ -5,10 +5,6 @@ import Card from '../components/card'
 import { useDispatch, useSelector } from "react-redux";
 import { increment } from "../actions/readingsActions";
 import { setFlagFalse } from "../actions/readingsActions";
-export const deal = (cards) => {
-
-  console.log(`dealing ${cards}`)
-}
 
 
 export default function ReadingCardContainer(props)  {
@@ -34,14 +30,13 @@ export default function ReadingCardContainer(props)  {
     const onCardClick = (event) => { 
       if (tap) setFlipped(state => !state)
       dispatch(increment())
-   
-      event.target.parentElement.style.zIndex= count
+      event.target.closest(".Card-Reading-Container").style.zIndex= count
       }
 
-      const onMouseDown = (event) => {
-        dispatch(increment())
-        event.target.parentElement.style.zIndex= count
-      }
+    const onMouseDown = (event) => {
+      dispatch(increment())
+      event.target.closest(".Card-Reading-Container").style.zIndex= count
+    }
 
       useEffect(() => {
         if(flag){
@@ -72,7 +67,7 @@ export default function ReadingCardContainer(props)  {
     return   <a.div id={`card-${props.props.id}`} className="Card-Reading-Container" onClick={(event) => onCardClick(event)} onMouseDown={(event) => onMouseDown(event)}
                 {...bind()}
                 style={{ transform: translate()}}>
-                    <Card props={props.props.attributes} flipped= {flipped} reading={true}/>
+                    <Card props={props.props.attributes} flipped= {flipped} reading={true} count= {count}/>
                     
              </a.div>
 

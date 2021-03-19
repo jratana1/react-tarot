@@ -97,21 +97,6 @@ body {
   text-align: center;
 }
 
-.Rocket {
-  background: url(./assets/r.png) no-repeat;
-  background-size: auto 85%;
-  width: 140px;
-  height: 140px;
-  cursor: -webkit-grab;
-  will-change: transform;
-  user-select: none;
-  position: absolute;
-}
-
-.Rocket:active {
-  cursor: -webkit-grabbing;
-}
-
 .Tarot {
   background: no-repeat;
   background-size: auto 90%;
@@ -150,4 +135,12 @@ form{
 .Form-Input{
   display: flex;
   flex-direction: column
+}
+
+.Card-Text{
+  border-radius: 10px;
+}
+
+.Card-Reading-Text{
+  border-radius: 10px;
 }
