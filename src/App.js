@@ -18,6 +18,19 @@ function App() {
       },
     [])
 
+    // need to make an action and reducer to update state
+    // useEffect(
+    //   () => {
+    //     fetch('http://localhost:3000/api/v1/readings')
+    //       .then(resp => resp.json())
+    //       .then(data =>{ 
+
+    //             // need to set a user use thunk middleware
+
+    //       })
+    //     },
+    //   [])
+
     const renderLoad = () => {
       if (isBusy) {
         return <div>Loading</div>;

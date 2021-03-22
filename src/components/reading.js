@@ -49,7 +49,6 @@ class Reading extends Component {
   fetch(`http://localhost:3000/api/v1/readings`, config)
       .then(res => res.json())
       .then(res => {
-          debugger
           this.setState({question: ""})
       })
   }
