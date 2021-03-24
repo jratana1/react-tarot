@@ -13,9 +13,10 @@ export default function ReadingCardContainer(props)  {
   const scope = useSelector(state => state.readings.readings)
   const dispatch = useDispatch();
   const [flipped, setFlipped] = useState(false)
-  const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0] }))
+  const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0], config: {mass: 2, tension: 100, friction: 50}
+  }))
   const [ tap, setTap] = useState(false)
-  const [self, setSelf] = useState(props.props.id)
+  const [self] = useState(props.props.id)
   
     const bind = useDrag(
         ({ down, movement: xy, tap }) => {
@@ -58,7 +59,7 @@ export default function ReadingCardContainer(props)  {
         setPos({pos: [900,-100]})
         dispatch(setFlagFalse())
       }
-      })
+      }, [flag, scope, self, setPos, dispatch])
 
     const translate = () => {
       return interpolate([pos], ([x, y]) => `translate3d(${x}px,${y}px,0)` )

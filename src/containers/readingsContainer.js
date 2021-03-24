@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import ReadingCardContainer, { deal } from './readingCardContainer'
+import React from "react";
+import ReadingCardContainer from './readingCardContainer'
 import Reading from '../components/reading'
 
 export function shuffle(array) {

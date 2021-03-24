@@ -1,3 +1,6 @@
+Tarot API backend can be found at:
+https://github.com/jratana1/tarot_api
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

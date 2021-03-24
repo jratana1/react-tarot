@@ -20,7 +20,9 @@ class Reading extends Component {
   constructor() {
     super();
     this.state = {
-      question: ''
+      question: '',
+      // cards: [],
+      // flag: true
     };
   }
 
@@ -35,6 +37,12 @@ class Reading extends Component {
     let cardIds= getRandom(this.props.cards,3).map(card => card.id)
     this.state.cards= cardIds
     this.state.flag= true
+    // this.setState((state) => {
+    //   return {cards: cardIds}
+    // });
+    // this.setState((state) => {
+    //   return {flag: true}
+    // });
     this.props.addReading(this.state)
 
     let config = {
@@ -45,7 +53,7 @@ class Reading extends Component {
       },
       body: JSON.stringify(this.state)
   }
-
+  
   fetch(`http://localhost:3000/api/v1/readings`, config)
       .then(res => res.json())
       .then(res => {
@@ -55,12 +63,12 @@ class Reading extends Component {
 
   render() {
     return(
-        <form onSubmit={ event => this.handleSubmit(event) }>
+        <form className="question" onSubmit={ event => this.handleSubmit(event) }>
           <p className="Form-Input">
             <label>Ask A Question</label>
             <textarea
-          type="text"
-          onChange={this.handleChange} value={this.state.question}/>
+              type="text"
+              onChange={this.handleChange} value={this.state.question}/>
           </p>
           <input type="submit" />
        </form>
