@@ -43,7 +43,7 @@ class Reading extends Component {
     // this.setState((state) => {
     //   return {flag: true}
     // });
-    this.props.addReading(this.state)
+    // this.props.addReading(this.state)
 
     let config = {
       method: 'POST',
@@ -58,6 +58,7 @@ class Reading extends Component {
       .then(res => res.json())
       .then(res => {
           this.setState({question: ""})
+          this.props.addReading(res)
       })
   }
 
