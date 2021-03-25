@@ -1,6 +1,7 @@
 import React from "react";
 import ReadingCardContainer from './readingCardContainer'
 import Reading from '../components/reading'
+import ReadingIndex from "../components/readingIndex";
 
 export function shuffle(array) {
 
@@ -32,6 +33,7 @@ export default function ReadingsContainer(props)  {
     return <div className="Reading-Container">
     {shuffledCards}
     <Reading cards={props.cards}/>
+    <ReadingIndex cards={props.cards}/>
           </div>
  
 }

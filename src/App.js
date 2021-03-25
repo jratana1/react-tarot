@@ -38,9 +38,13 @@ function App() {
       } else {
         return (
           <>
-            <li><Link to="/">Home</Link></li> 
-            <li><Link to="/cards">Cards</Link></li>
-            <li><Link to="/readings" >Readings</Link></li>
+            <div >
+              <ul className="Navbar">
+                <li className="Nav-Item"><Link to="/">Home</Link></li> 
+                <li className="Nav-Item"><Link to="/cards">Cards</Link></li>
+                <li className="Nav-Item"><Link to="/readings" >Readings</Link></li>
+              </ul>
+            </div>
             <Header/>
             <Route exact path="/" >
                 <Login/>
