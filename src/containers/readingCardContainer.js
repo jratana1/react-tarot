@@ -8,9 +8,11 @@ import { setFlagFalse } from "../actions/readingsActions";
 
 
 export default function ReadingCardContainer(props)  {
+  const current = useSelector(state => state.readings.current);
   const count = useSelector(state => state.readings.counter);
   const flag = useSelector(state => state.readings.flag);
-  const scope = useSelector(state => state.readings.readings)
+  
+  const scope = useSelector(state => state.readings.readings);
   const dispatch = useDispatch();
   const [flipped, setFlipped] = useState(false)
   const [{ pos }, setPos] = useSpring(() => ({ pos: [0, 0], config: {mass: 2, tension: 100, friction: 50}
@@ -38,6 +40,28 @@ export default function ReadingCardContainer(props)  {
       dispatch(increment())
       event.target.closest(".Card-Reading-Container").style.zIndex= count
     }
+    useEffect(() => {
+        setPos({pos: [0, 0]})
+        setFlipped(false)
+     const reading= scope.find(obj => obj.id === current)
+      if (reading){
+          if (reading.relationships.cards.data[0].id === self) {
+            setPos({pos: [300,-100]})
+            setFlipped(true)
+          }
+
+        if (reading.relationships.cards.data[1].id === self)  {
+        setPos({pos: [600,-100]})
+        setFlipped(true)
+        }
+
+       if (reading.relationships.cards.data[2].id === self)  {
+        setPos({pos: [900,-100]})
+        setFlipped(true)
+      }
+    
+      }
+    }, [current])
 
       useEffect(() => {
         if(flag){

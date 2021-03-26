@@ -1,18 +1,17 @@
 const initialState = {
     counter: 0,
     readings: [],
-    flag: false
+    flag: false,
+    current: ''
 }
 
 const readingsReducer = (state= initialState, action) => {
-    
+
     switch(action.type){
         case "INCREMENT": 
         return {...state, counter: state.counter + 1}
 
         case "ADD_READING":
-     
-        // return {...state, readings: [...state.readings, {question: action.payload.question, cards: action.payload.cards}], flag: true }
         return {...state, readings: action.payload.data, flag: true }
 
         case "SET_FLAG":
@@ -20,6 +19,9 @@ const readingsReducer = (state= initialState, action) => {
 
         case "SET_FLAG_FALSE":
         return {...state, flag: false}
+
+        case "CLICK_FLAG":
+        return {...state, current: action.payload}
 
         default:
             return {...state}
