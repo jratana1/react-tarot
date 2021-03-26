@@ -49,12 +49,13 @@ class Reading extends Component {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          Authorization: `Bearer ${sessionStorage.token}`
       },
       body: JSON.stringify(this.state)
   }
-  
-  fetch(`https://safe-cove-73377.herokuapp.com/api/v1/readings`, config)
+  fetch(`http://localhost:3000/api/v1/readings`, config)
+  // fetch(`https://safe-cove-73377.herokuapp.com/api/v1/readings`, config)
       .then(res => res.json())
       .then(res => {
           this.setState({question: ""})

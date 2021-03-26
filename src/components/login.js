@@ -7,6 +7,7 @@ class Login extends React.Component {
         super();
         this.state = {
           username: '',
+          password: ''
         };
       }
 
@@ -19,19 +20,27 @@ class Login extends React.Component {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({user: this.state})
   }
-  
+
   fetch(`http://localhost:3000/api/v1/users`, config)
       .then(res => res.json())
       .then(res => {
-          this.setState({username: ""})
+       
+          sessionStorage.setItem("token", res.jwt)
+          this.setState({username: "", password: ""})
       })
   }
 
   handleChange = event => {
     this.setState({
       username: event.target.value
+    });
+  }
+
+  handlePasswordChange = event => {
+    this.setState({
+      password: event.target.value
     });
   }
 
@@ -44,6 +53,10 @@ class Login extends React.Component {
             <input
           type="text"
           onChange={this.handleChange} value={this.state.username}/>
+          <label>password</label>
+            <input
+          type="password"
+          onChange={this.handlePasswordChange} value={this.state.password}/>
           </p>
           <input type="submit" />
        </form>
