@@ -146,6 +146,11 @@ li a:hover {
   background-color: #111;
 }
 
+li {
+  list-style-type: none;
+  text-align: center;
+}
+
 .Reading-List{
   top: 0;
   width:250px; 

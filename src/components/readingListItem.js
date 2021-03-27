@@ -7,7 +7,7 @@ export default function ReadingListItem(props) {
 
    return <>
      
-            <li id={props.props.id}>
+            <li className="list-item" id={props.props.id}>
                 <h2>{props.props.attributes.question}</h2>
                 <div>{results[0].attributes.name}</div>
                 <div>{results[1].attributes.name}</div>
