@@ -7,7 +7,7 @@ export default function Card(props) {
     const {transform, opacity} = useSpring({
         opacity: props.flipped ? 1 : 0,
         transform: `perspective(600px) rotateY(${props.flipped ? 180 : 0}deg)`,
-        config: {mass: 5, tension: 500, friction: 80},
+        config: {mass: 5, tension: 400, friction: 80},
       })
 
     const backImage = () => {

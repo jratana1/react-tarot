@@ -13,16 +13,22 @@ export default function ReadingIndex(props) {
     })
     
     useEffect(() => {
+    if (readings.length > 0) 
+        {
         let list = document.getElementsByClassName("list-item")
+        
         for (let item of list) {
             item.style.backgroundColor = "";
         }
-    let last = document.getElementById(readings.slice(-1)[0].id)
-    last.style.backgroundColor = "grey"
-    }
+            
+        let last = document.getElementById(readings.slice(-1)[0].id)
+        last.style.backgroundColor = "grey"
+        }
+     }
     )
-    
+
     const onListClick = (event) => { 
+        debugger
         dispatch({type: 'CLICK_FLAG', payload: event.target.closest("li").id})
   
         let list = document.getElementsByClassName("list-item")

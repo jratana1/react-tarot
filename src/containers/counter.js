@@ -1,19 +1,3 @@
-// import React from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { addCount } from "../actions/counterAction";
-
-// export default function Count() {
-//   const count = useSelector(state => state.count);
-//   const dispatch = useDispatch();
-
-//   return (
-//     <main>
-//       <div>Count: {count.count}</div>
-//       <button onClick={() => dispatch(addCount())}>Add to count</button>
-//     </main>
-//   );
-// };
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
