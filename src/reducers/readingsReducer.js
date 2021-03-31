@@ -23,6 +23,9 @@ const readingsReducer = (state= initialState, action) => {
         case "CLICK_FLAG":
         return {...state, current: action.payload}
 
+        case "ADD_READINGS":
+        return {...state, readings: action.payload.data, flag: true }
+
         default:
             return {...state}
     }

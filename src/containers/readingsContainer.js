@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from 'react'
 import ReadingCardContainer from './readingCardContainer'
 import Reading from '../components/reading'
 import ReadingIndex from "../components/readingIndex";
+import { useDispatch, useSelector } from 'react-redux'
+import {fetchReadings} from '../actions/readingsActions'
+
 
 export function shuffle(array) {
 
@@ -23,7 +26,19 @@ export function shuffle(array) {
     return array;
   }
 
+
 export default function ReadingsContainer(props)  {
+  const dispatch = useDispatch();
+  
+  // useEffect(
+  // fetchReadings(dispatch)
+  // ,
+  // [])
+
+  useEffect(() => {
+    dispatch(fetchReadings())
+  },[dispatch])
+
     let shuffledCards = <></>
 
         if ( props.cards ) { 

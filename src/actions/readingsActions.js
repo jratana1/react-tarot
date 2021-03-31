@@ -15,3 +15,20 @@ export const setFlagFalse = () => {
         type: 'SET_FLAG_FALSE',
     }
 }
+
+
+export const fetchReadings = () =>{
+        return (dispatch) => {
+            let config = {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }
+                }
+                fetch('http://localhost:3000/api/v1/readings', config)
+                .then(resp => resp.json())
+                .then(data =>{ 
+                    dispatch({type: 'ADD_READINGS', payload: data})
+        })
+    }
+}

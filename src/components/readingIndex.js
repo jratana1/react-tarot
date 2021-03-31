@@ -28,7 +28,6 @@ export default function ReadingIndex(props) {
     )
 
     const onListClick = (event) => { 
-        debugger
         dispatch({type: 'CLICK_FLAG', payload: event.target.closest("li").id})
   
         let list = document.getElementsByClassName("list-item")
