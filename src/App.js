@@ -1,4 +1,4 @@
-import CardContainer from './containers/cardContainer'
+import InputBox from './components/inputBox'
 import ReadingsContainer from './containers/readingsContainer'
 import React, { useState, useEffect } from 'react'
 import { HashRouter, Route, Link } from 'react-router-dom';
@@ -41,6 +41,7 @@ function App() {
             </Route>
             <Route exact path="/cards" >
               <CardFilter/>
+              <InputBox />
               <CardsIndex props={cards}/>
             </Route>
             <Route exact path="/readings" >

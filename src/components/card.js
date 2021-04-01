@@ -4,6 +4,8 @@ import tarotBack from '../assets/tarotBack.png'
 
 export default function Card(props) {
     const [isShown, setIsShown] = useState(false);
+    const [count, setcount] = useState(0)
+
     const {transform, opacity} = useSpring({
         opacity: props.flipped ? 1 : 0,
         transform: `perspective(600px) rotateY(${props.flipped ? 180 : 0}deg)`,
@@ -27,6 +29,7 @@ export default function Card(props) {
         <p className="Card-Upright">Upright: {props.props.upright}</p>
         <p className="Card-Reverse">Reversed: {props.props.reversed}</p>
         <p className="Card-Meaning">{props.props.summary}</p>
+        
         </div>
         }
         else if(props.reading) {return null}    
@@ -35,11 +38,13 @@ export default function Card(props) {
         <p className="Card-Upright">Upright: {props.props.upright}</p>
         <p className="Card-Reverse">Reversed: {props.props.reversed}</p>
         <p className="Card-Meaning">{props.props.summary}</p>
+        
         </div>}
     }
 
 
     return <>
+    <div>im here</div>
     <a.div className="Card-Back" style={{
         backgroundImage: `url(${backImage()})`,
         opacity: opacity.interpolate(o => 1 - o),

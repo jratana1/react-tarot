@@ -64,25 +64,28 @@ export default function ReadingCardContainer(props)  {
     }, [current])
 
       useEffect(() => {
-        if(flag){
-          setPos({pos: [0, 0]})
-          setFlipped(false)
+ 
+
+        if (scope.length > 0) {
+          if(flag){
+            setPos({pos: [0, 0]})
+            setFlipped(false)
+          }
+          if (flag && (scope.slice(-1)[0].relationships.cards.data[0].id === self)) {
+            setPos({pos: [300,-100]})
+            dispatch(setFlagFalse())
+          }
+    
+            if (flag && (scope.slice(-1)[0].relationships.cards.data[1].id === self))  {
+            setPos({pos: [600,-100]})
+            dispatch(setFlagFalse())
+          }
+    
+          if (flag && (scope.slice(-1)[0].relationships.cards.data[2].id === self))  {
+            setPos({pos: [900,-100]})
+            dispatch(setFlagFalse())
+          }
         }
-        if (flag && (scope.slice(-1)[0].relationships.cards.data[0].id === self)) {
-          setPos({pos: [300,-100]})
-          dispatch(setFlagFalse())
-        }
-  
-          if (flag && (scope.slice(-1)[0].relationships.cards.data[1].id === self))  {
-          setPos({pos: [600,-100]})
-          dispatch(setFlagFalse())
-        }
-  
-         if (flag && (scope.slice(-1)[0].relationships.cards.data[2].id === self))  {
-          setPos({pos: [900,-100]})
-          dispatch(setFlagFalse())
-        }
-        
       }, [flag, scope, self, setPos, dispatch])
 
     const translate = () => {
