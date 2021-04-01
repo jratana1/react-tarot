@@ -3,3 +3,10 @@ export const addCount = () => {
         type: 'BUTTON_INCREMENT'
     }
 }
+
+export const filter = (query) => {
+    return {
+        type: 'FILTER',
+        payload: query
+    }
+}

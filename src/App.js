@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react'
 import { HashRouter, Route, Link } from 'react-router-dom';
 import Login from './components/login'
 import Header from './components/header'
+import CardsIndex from './containers/cardsIndex'
+import CardFilter from './components/cardFilter';
 
 function App() {
   const [cards, setCards] = useState([])
@@ -38,9 +40,8 @@ function App() {
                 <Login/>
             </Route>
             <Route exact path="/cards" >
-              <div className="Card-Index">
-                {cards.map((card) => <CardContainer props={card}/>)}
-              </div>
+              <CardFilter/>
+              <CardsIndex props={cards}/>
             </Route>
             <Route exact path="/readings" >
                 <ReadingsContainer cards={cards}/>
