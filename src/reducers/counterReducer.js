@@ -1,5 +1,6 @@
 export default function count(state = {
-    count: 0
+    count: 0,
+    query: "all"
     }, action) {
     switch (action.type) {
       case 'BUTTON_INCREMENT':
@@ -9,8 +10,7 @@ export default function count(state = {
         return state.count - 1
 
       case 'FILTER':
-        
-        return 
+        return  {...state, query: action.payload.query}
 
       default:
         return state

@@ -14,9 +14,8 @@ class CardFilter extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state)
-    debugger
     this.props.filter(this.state)
-
+    this.setState({query: ""})
   }
 
   handleChange = event => {
