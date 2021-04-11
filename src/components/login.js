@@ -24,6 +24,7 @@ class Login extends React.Component {
   }
 
   fetch(`http://localhost:3000/api/v1/users`, config)
+  // fetch(`https://safe-cove-73377.herokuapp.com/api/v1/users`, config)
       .then(res => res.json())
       .then(res => {
           sessionStorage.setItem("token", res.jwt)

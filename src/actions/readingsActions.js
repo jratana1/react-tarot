@@ -26,6 +26,7 @@ export const fetchReadings = () =>{
                 }
                 }
                 fetch('http://localhost:3000/api/v1/readings', config)
+                // fetch('https://safe-cove-73377.herokuapp.com/api/v1/cards', config)
                 .then(resp => resp.json())
                 .then(data =>{ 
                     dispatch({type: 'ADD_READINGS', payload: data})
