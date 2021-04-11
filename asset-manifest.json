@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react-tarot/static/css/main.cb0f4a08.chunk.css",
-    "main.js": "/react-tarot/static/js/main.527217c8.chunk.js",
-    "main.js.map": "/react-tarot/static/js/main.527217c8.chunk.js.map",
+    "main.css": "/react-tarot/static/css/main.b31d6bab.chunk.css",
+    "main.js": "/react-tarot/static/js/main.1fa84c38.chunk.js",
+    "main.js.map": "/react-tarot/static/js/main.1fa84c38.chunk.js.map",
     "runtime-main.js": "/react-tarot/static/js/runtime-main.61e47392.js",
     "runtime-main.js.map": "/react-tarot/static/js/runtime-main.61e47392.js.map",
-    "static/js/2.b07d8a57.chunk.js": "/react-tarot/static/js/2.b07d8a57.chunk.js",
-    "static/js/2.b07d8a57.chunk.js.map": "/react-tarot/static/js/2.b07d8a57.chunk.js.map",
+    "static/js/2.93de52c5.chunk.js": "/react-tarot/static/js/2.93de52c5.chunk.js",
+    "static/js/2.93de52c5.chunk.js.map": "/react-tarot/static/js/2.93de52c5.chunk.js.map",
     "index.html": "/react-tarot/index.html",
-    "static/css/main.cb0f4a08.chunk.css.map": "/react-tarot/static/css/main.cb0f4a08.chunk.css.map",
-    "static/js/2.b07d8a57.chunk.js.LICENSE.txt": "/react-tarot/static/js/2.b07d8a57.chunk.js.LICENSE.txt",
+    "static/css/main.b31d6bab.chunk.css.map": "/react-tarot/static/css/main.b31d6bab.chunk.css.map",
+    "static/js/2.93de52c5.chunk.js.LICENSE.txt": "/react-tarot/static/js/2.93de52c5.chunk.js.LICENSE.txt",
     "static/media/tarotBack.2deb9d18.png": "/react-tarot/static/media/tarotBack.2deb9d18.png"
   },
   "entrypoints": [
     "static/js/runtime-main.61e47392.js",
-    "static/js/2.b07d8a57.chunk.js",
-    "static/css/main.cb0f4a08.chunk.css",
-    "static/js/main.527217c8.chunk.js"
+    "static/js/2.93de52c5.chunk.js",
+    "static/css/main.b31d6bab.chunk.css",
+    "static/js/main.1fa84c38.chunk.js"
   ]
 }
