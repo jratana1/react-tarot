@@ -4,7 +4,6 @@ import tarotBack from '../assets/tarotBack.png'
 
 export default function Card(props) {
     const [isShown, setIsShown] = useState(false);
-    const [count, setcount] = useState(0)
 
     const {transform, opacity} = useSpring({
         opacity: props.flipped ? 1 : 0,
