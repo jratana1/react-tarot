@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-tarot/static/css/main.b31d6bab.chunk.css",
-    "main.js": "/react-tarot/static/js/main.97c026a5.chunk.js",
-    "main.js.map": "/react-tarot/static/js/main.97c026a5.chunk.js.map",
+    "main.js": "/react-tarot/static/js/main.8d34306b.chunk.js",
+    "main.js.map": "/react-tarot/static/js/main.8d34306b.chunk.js.map",
     "runtime-main.js": "/react-tarot/static/js/runtime-main.61e47392.js",
     "runtime-main.js.map": "/react-tarot/static/js/runtime-main.61e47392.js.map",
     "static/js/2.f95ae70a.chunk.js": "/react-tarot/static/js/2.f95ae70a.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.61e47392.js",
     "static/js/2.f95ae70a.chunk.js",
     "static/css/main.b31d6bab.chunk.css",
-    "static/js/main.97c026a5.chunk.js"
+    "static/js/main.8d34306b.chunk.js"
   ]
 }
