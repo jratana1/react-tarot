@@ -1,3 +1,5 @@
+import { BASE_URL } from "../index"
+
 export const increment = () => {
     return {
         type: 'INCREMENT',
@@ -25,7 +27,7 @@ export const fetchReadings = () =>{
                     Authorization: `Bearer ${sessionStorage.token}`
                 }
                 }
-                fetch('http://localhost:3000/api/v1/readings', config)
+                fetch(BASE_URL+'/readings', config)
                 // fetch('https://safe-cove-73377.herokuapp.com/api/v1/readings', config)
                 .then(resp => resp.json())
                 .then(data =>{ 

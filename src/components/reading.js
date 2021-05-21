@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {BASE_URL} from '../index'
+
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -54,7 +56,7 @@ class Reading extends Component {
       },
       body: JSON.stringify(this.state)
   }
-  fetch(`http://localhost:3000/api/v1/readings`, config)
+  fetch(BASE_URL+`/readings`, config)
   // fetch(`https://safe-cove-73377.herokuapp.com/api/v1/readings`, config)
       .then(res => res.json())
       .then(res => {

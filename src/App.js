@@ -5,6 +5,7 @@ import Login from './components/login'
 import Header from './components/header'
 import CardsIndex from './containers/cardsIndex'
 import CardFilter from './components/cardFilter';
+import {BASE_URL} from './index'
 //  fetches in App.js, reading.js, a
 function App() {
   const [cards, setCards] = useState([])
@@ -12,8 +13,7 @@ function App() {
   
   useEffect(
     () => {
-      fetch('http://localhost:3000/api/v1/cards')
-      // fetch('https://safe-cove-73377.herokuapp.com/api/v1/cards')
+      fetch(BASE_URL+'/cards')
         .then(resp => resp.json())
         .then(data =>{ 
               setCards(data.data)
