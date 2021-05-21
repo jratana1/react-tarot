@@ -8,7 +8,8 @@ import { createStore, applyMiddleware, compose  } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer.js';
 
-export const BASE_URL = "http://localhost:3000/api/v1";
+// export const BASE_URL = "http://localhost:3000/api/v1";
+export const BASE_URL = "https://safe-cove-73377.herokuapp.com/api/v1";
 
 const store = createStore(rootReducer, compose(
   applyMiddleware(thunk),

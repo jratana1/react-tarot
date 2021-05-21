@@ -6,7 +6,7 @@ import Header from './components/header'
 import CardsIndex from './containers/cardsIndex'
 import CardFilter from './components/cardFilter';
 import {BASE_URL} from './index'
-//  fetches in App.js, reading.js, a
+
 function App() {
   const [cards, setCards] = useState([])
   const [isBusy, setBusy] = useState(true)
